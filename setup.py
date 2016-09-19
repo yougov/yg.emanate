@@ -6,15 +6,14 @@ from setuptools import setup
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
+with open('CHANGES.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    # TODO: put package requirements here
-]
-
-test_requirements = [
-    # TODO: put package test requirements here
+    "blinker",
+    "jaraco.classes>=1.1",
+    "pika",
+    "PikaChewie>=1.1",
 ]
 
 setup(
@@ -28,8 +27,7 @@ setup(
     packages=[
         'emanate',
     ],
-    package_dir={'emanate':
-                 'emanate'},
+    package_dir={'emanate': 'emanate'},
     include_package_data=True,
     install_requires=requirements,
     license="MIT license",
@@ -49,5 +47,4 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
     test_suite='tests',
-    tests_require=test_requirements
 )
