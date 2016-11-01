@@ -19,7 +19,7 @@ requirements = [
 
 setup(
     name='emanate',
-    version='0.1.0',
+    version='0.2.0',
     description="Lightweight event system for Python",
     long_description=readme + '\n\n' + history,
     author="YouGov, plc",
