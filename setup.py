@@ -14,6 +14,7 @@ requirements = [
     "jaraco.classes>=1.1",
     "pika",
     "PikaChewie>=1.1",
+    "six",
 ]
 
 setup(

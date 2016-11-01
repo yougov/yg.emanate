@@ -14,5 +14,5 @@ pika==0.10.0b2
 PikaChewie==1.1.0
 simplejson==3.8.2         # via pikachewie
 singledispatch==3.4.0.3   # via tornado
-six==1.10.0               # via jaraco.classes, singledispatch
+six==1.10.0
 tornado==4.4.1            # via pikachewie

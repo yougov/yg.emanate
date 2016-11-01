@@ -1,8 +1,8 @@
 """Classes for observers in ``emanate``."""
 import logging
-import Queue
 from threading import Thread
 
+from six.moves import queue
 from pika.exceptions import AMQPError, RecursionError
 from pikachewie.data import Properties
 from pikachewie.helpers import broker_from_config
@@ -25,9 +25,9 @@ NullPublisher = BasePublisher
 
 
 class QueuePublisher(BasePublisher):
-    """Publisher that dispatches events to a `Queue.Queue`."""
+    """Publisher that dispatches events to a `queue.Queue`."""
     def __init__(self):
-        self._queue = Queue.Queue(maxsize=256)
+        self._queue = queue.Queue(maxsize=256)
         self._worker = Thread(target=self._process_queue)
         self._worker.daemon = True
         self._worker.start()
@@ -35,7 +35,7 @@ class QueuePublisher(BasePublisher):
     def publish(self, event):
         try:
             self._queue.put_nowait(event)
-        except Queue.Full as exc:
+        except queue.Full as exc:
             log.exception('Cannot publish event: %r', exc)
             log.warn('Failed to publish event %s with context %s',
                      event.data, event.context)
@@ -88,7 +88,7 @@ class RabbitMQPublisher(QueuePublisher):
 
                 try:
                     event = self._queue.get(timeout=10)
-                except Queue.Empty:
+                except queue.Empty:
                     pass
             try:
                 self._process_event(event)
