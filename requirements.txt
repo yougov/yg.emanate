@@ -8,11 +8,11 @@
 
 backports-abc==0.5        # via tornado
 blinker==1.4
-certifi==2016.8.31        # via tornado
-jaraco.classes==1.4
+certifi==2017.4.17        # via tornado
+jaraco.classes==1.4.1
 pika==0.10.0
-PikaChewie==1.1.1
-simplejson==3.8.2         # via pikachewie
+pikachewie==1.2.0
+simplejson==3.10.0        # via pikachewie
 singledispatch==3.4.0.3   # via tornado
 six==1.10.0
-tornado==4.4.1            # via pikachewie
+tornado==4.5.1            # via pikachewie
