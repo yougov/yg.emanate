@@ -79,23 +79,33 @@ class RabbitMQPublisher(QueuePublisher):
             **self.config['rabbitmq']['exchanges'][self.exchange]
         )
 
+    def _wait_for_event(self):
+        while True:
+            # trigger processing of RabbitMQ data events
+            try:
+                self.publisher.channel.connection.process_data_events()
+            except AMQPError as exc:
+                log.exception('Error from RabbitMQ: %r', exc)
+                log.info('Will attempt to re-establish connection.')
+                del self.publisher.channel
+
+            try:
+                return self._queue.get(timeout=10)
+            except queue.Empty:
+                pass
+
     def _process_queue(self):
         while True:
-            event = None
-            while event is None:
-                # trigger processing of RabbitMQ data events
-                self.publisher.channel.connection.process_data_events()
+            event = self._wait_for_event()
+            self._handle_event(event)
 
-                try:
-                    event = self._queue.get(timeout=10)
-                except queue.Empty:
-                    pass
-            try:
-                self._process_event(event)
-            except Exception as exc:
-                log.exception(exc)
-            finally:
-                self._queue.task_done()
+    def _handle_event(self, event):
+        try:
+            self._process_event(event)
+        except Exception as exc:
+            log.exception(exc)
+        finally:
+            self._queue.task_done()
 
     def _process_event(self, event):
         properties = Properties()

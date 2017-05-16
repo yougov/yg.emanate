@@ -31,10 +31,14 @@ class Event(object):
 
     @classmethod
     def register_observer(cls, observer):
+        if not callable(observer):
+            raise ValueError('observer must be callable')
         cls._signal.connect(observer)
 
     @classmethod
     def unregister_observer(cls, observer):
+        if not callable(observer):
+            raise ValueError('observer must be callable')
         cls._signal.disconnect(observer)
 
     def emit(self):
