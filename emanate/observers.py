@@ -79,7 +79,7 @@ class RabbitMQPublisher(QueuePublisher):
             **self.config['rabbitmq']['exchanges'][self.exchange]
         )
 
-    def _process_queue(self):
+    def _wait_for_event(self):
         while True:
             event = None
             while event is None:
@@ -95,12 +95,21 @@ class RabbitMQPublisher(QueuePublisher):
                     event = self._queue.get(timeout=10)
                 except queue.Empty:
                     pass
-            try:
-                self._process_event(event)
-            except Exception as exc:
-                log.exception(exc)
-            finally:
-                self._queue.task_done()
+                else:
+                    return event
+
+    def _process_queue(self):
+        while True:
+            event = self._wait_for_event()
+            self._handle_the_event(event)
+
+    def _handle_the_event(self, event):
+        try:
+            self._process_event(event)
+        except Exception as exc:
+            log.exception(exc)
+        finally:
+            self._queue.task_done()
 
     def _process_event(self, event):
         properties = Properties()
