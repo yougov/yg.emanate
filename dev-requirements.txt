@@ -4,10 +4,7 @@
 #
 #    pip-compile --output-file dev-requirements.txt dev-requirements.in
 #
---index-url https://devpi.yougov.net/root/yg/+simple/
-
 alabaster==0.7.10         # via sphinx
-appdirs==1.4.3            # via setuptools
 argh==0.26.2              # via watchdog
 babel==2.4.0              # via sphinx
 backports-abc==0.5        # via tornado
@@ -26,7 +23,6 @@ jinja2==2.9.6             # via sphinx
 markupsafe==1.0           # via jinja2
 mccabe==0.6.1             # via flake8
 mock==2.0.0
-packaging==16.8           # via setuptools
 pathtools==0.1.2          # via watchdog
 pbr==3.0.0                # via mock
 pika==0.10.0
@@ -36,7 +32,6 @@ py==1.4.33                # via pytest, tox
 pycodestyle==2.3.1        # via flake8
 pyflakes==1.5.0           # via flake8
 pygments==2.2.0           # via sphinx
-pyparsing==2.2.0          # via packaging
 pytest==3.0.7
 pytz==2017.2              # via babel
 pyyaml==3.12              # via watchdog
@@ -53,6 +48,3 @@ typing==3.6.1             # via sphinx
 virtualenv==15.1.0        # via tox
 watchdog==0.8.3
 wheel==0.29.0
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools                # via pytest, sphinx
