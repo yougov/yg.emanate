@@ -97,9 +97,9 @@ class RabbitMQPublisher(QueuePublisher):
     def _process_queue(self):
         while True:
             event = self._wait_for_event()
-            self._handle_the_event(event)
+            self._handle_event(event)
 
-    def _handle_the_event(self, event):
+    def _handle_event(self, event):
         try:
             self._process_event(event)
         except Exception as exc:
