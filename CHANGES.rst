@@ -2,6 +2,15 @@
 CHANGES
 =======
 
+0.3.0
+-----
+
+* If ``RabbitMQPublisher`` encounters an AMQP error while processing data
+  events, attempt to re-establish the underlying channel (#1 from
+  @the-allanc).
+* Make ``RabbitMQPublisher`` more robust in its handling of errors that
+  occur while processing data events. (#3 from @the-allanc).
+
 0.2.1
 -----
 
