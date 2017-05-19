@@ -83,10 +83,9 @@ class RabbitMQPublisher(QueuePublisher):
         while True:
             # trigger processing of RabbitMQ data events
             try:
-                self.publisher.channel.connection.process_data_events()
-            except AMQPError as exc:
-                log.exception('Error from RabbitMQ: %r', exc)
-                log.info('Will attempt to re-establish connection.')
+                self.publisher.process_data_events()
+            except Exception as exc:
+                log.exception('Error processing data events: %r', exc)
                 del self.publisher.channel
 
             try:

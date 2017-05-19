@@ -13,7 +13,7 @@ requirements = [
     "blinker",
     "jaraco.classes>=1.1",
     "pika",
-    "PikaChewie>=1.2.0",
+    "PikaChewie>=1.3",
     "six",
 ]
 
