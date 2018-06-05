@@ -2,6 +2,11 @@
 CHANGES
 =======
 
+0.4.0
+-----
+
+* Rename package to yg.emanate.
+
 0.3.0
 -----
 

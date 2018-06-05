@@ -18,17 +18,17 @@ requirements = [
 ]
 
 setup(
-    name='emanate',
-    version='0.3.0',
+    name='yg.emanate',
+    version='0.4.0',
     description="Lightweight event system for Python",
     long_description=readme + '\n\n' + history,
     author="YouGov, plc",
     author_email='dev@yougov.com',
     url='https://github.com/yougov/emanate',
     packages=[
-        'emanate',
+        'yg.emanate',
     ],
-    package_dir={'emanate': 'emanate'},
+    namespace_packages=['yg'],
     include_package_data=True,
     install_requires=requirements,
     license="MIT license",

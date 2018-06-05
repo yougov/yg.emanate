@@ -1,4 +1,4 @@
-from emanate.observers import QueuePublisher
+from yg.emanate.observers import QueuePublisher
 
 
 class TestQueuePublisher(object):

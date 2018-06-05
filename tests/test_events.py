@@ -1,4 +1,4 @@
-from emanate.events import Event
+from yg.emanate.events import Event
 
 
 class TestEvent(object):
