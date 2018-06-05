@@ -24,7 +24,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author="YouGov, plc",
     author_email='dev@yougov.com',
-    url='https://github.com/yougov/emanate',
+    url='https://github.com/yougov/yg.emanate',
     packages=[
         'yg.emanate',
     ],
