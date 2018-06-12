@@ -3,12 +3,6 @@
 
 from setuptools import setup
 
-with open('README.rst') as readme_file:
-    readme = readme_file.read()
-
-with open('CHANGES.rst') as history_file:
-    history = history_file.read()
-
 requirements = [
     "blinker",
     "jaraco.classes>=1.1",
@@ -21,7 +15,6 @@ setup(
     name='yg.emanate',
     version='0.4.0',
     description="Lightweight event system for Python",
-    long_description=readme + '\n\n' + history,
     author="YouGov, plc",
     author_email='dev@yougov.com',
     url='https://github.com/yougov/yg.emanate',
