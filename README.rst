@@ -3,18 +3,18 @@ emanate
 ===============================
 
 
-.. image:: https://img.shields.io/pypi/v/emanate.svg
-        :target: https://pypi.python.org/pypi/emanate
+.. image:: https://img.shields.io/pypi/v/yg.emanate.svg
+        :target: https://pypi.python.org/pypi/yg.emanate
 
-.. image:: https://img.shields.io/travis/yougov/emanate.svg
-        :target: https://travis-ci.org/yougov/emanate
+.. image:: https://img.shields.io/travis/yougov/yg.emanate.svg
+        :target: https://travis-ci.org/yougov/yg.emanate
 
-.. image:: https://readthedocs.org/projects/emanate/badge/?version=latest
-        :target: https://emanate.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/ygemanate/badge/?version=latest
+        :target: https://ygemanate.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/yougov/emanate/shield.svg
-     :target: https://pyup.io/repos/github/yougov/emanate/
+.. image:: https://pyup.io/repos/github/yougov/yg.emanate/shield.svg
+     :target: https://pyup.io/repos/github/yougov/yg.emanate/
      :alt: Updates
 
 
