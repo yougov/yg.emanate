@@ -22,7 +22,6 @@ Lightweight event system for Python
 
 
 * Free software: MIT license
-* Documentation: https://emanate.readthedocs.io.
 
 
 Features
