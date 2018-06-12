@@ -16,7 +16,6 @@ setup(
     namespace_packages=['yg'],
     include_package_data=True,
     setup_requires=['setuptools_scm>=1.15'],
-    zip_safe=False,
     keywords='emanate',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
