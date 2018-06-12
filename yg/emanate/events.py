@@ -2,8 +2,10 @@
 import blinker
 from jaraco.classes.properties import classproperty
 
+__metaclass__ = type
 
-class Event(object):
+
+class Event:
     """Base class for ``emanate`` events."""
     event_type = None
 

@@ -8,10 +8,12 @@ from pikachewie.data import Properties
 from pikachewie.helpers import broker_from_config
 from pikachewie.publisher import BlockingJSONPublisher
 
+__metaclass__ = type
+
 log = logging.getLogger(__name__)
 
 
-class BasePublisher(object):
+class BasePublisher:
     """Base Publisher class."""
     def __init__(self, *args, **kwargs):
         pass
