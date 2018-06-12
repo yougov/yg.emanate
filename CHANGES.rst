@@ -2,6 +2,11 @@
 CHANGES
 =======
 
+0.5.0
+-----
+
+* Drop support for Python 2.6 and 3.3.
+
 0.4.0
 -----
 
