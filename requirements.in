@@ -1,5 +1,0 @@
-blinker
-jaraco.classes>=1.1
-pika
-PikaChewie>=1.2.0
-six

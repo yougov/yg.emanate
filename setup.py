@@ -3,14 +3,6 @@
 
 from setuptools import setup
 
-requirements = [
-    "blinker",
-    "jaraco.classes>=1.1",
-    "pika",
-    "PikaChewie>=1.3",
-    "six",
-]
-
 setup(
     name='yg.emanate',
     use_scm_version=True,
@@ -23,7 +15,6 @@ setup(
     ],
     namespace_packages=['yg'],
     include_package_data=True,
-    install_requires=requirements,
     setup_requires=['setuptools_scm>=1.15'],
     zip_safe=False,
     keywords='emanate',
