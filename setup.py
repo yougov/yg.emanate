@@ -13,7 +13,7 @@ requirements = [
 
 setup(
     name='yg.emanate',
-    version='0.4.0',
+    use_scm_version=True,
     description="Lightweight event system for Python",
     author="YouGov, plc",
     author_email='dev@yougov.com',
@@ -24,6 +24,7 @@ setup(
     namespace_packages=['yg'],
     include_package_data=True,
     install_requires=requirements,
+    setup_requires=['setuptools_scm>=1.15'],
     zip_safe=False,
     keywords='emanate',
     classifiers=[

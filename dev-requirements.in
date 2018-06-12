@@ -1,6 +1,5 @@
 -r requirements.in
 
-bumpversion
 wheel
 watchdog
 flake8
