@@ -1,3 +1,9 @@
+0.6.0
+-----
+
+* ``RabbitMQPublisher`` will look for a `routing_key` context parameter on
+  an event, and will use that value as the routing key for the event.
+
 0.5.0
 -----
 
