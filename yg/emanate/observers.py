@@ -112,7 +112,7 @@ class RabbitMQPublisher(QueuePublisher):
         properties = Properties()
         if event.context:
             properties.headers = event.context
-        routing_key = properties.headers.pop('routing_key', '')
+        routing_key = properties.headers.get('routing_key', '')
 
         try:
             self.publisher.publish(self.exchange, routing_key, event.data, properties)
