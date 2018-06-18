@@ -112,9 +112,10 @@ class RabbitMQPublisher(QueuePublisher):
         properties = Properties()
         if event.context:
             properties.headers = event.context
+        routing_key = properties.headers.pop('routing_key', '')
 
         try:
-            self.publisher.publish(self.exchange, '', event.data, properties)
+            self.publisher.publish(self.exchange, routing_key, event.data, properties)
         except (AMQPError, RecursionError) as exc:
             log.exception('Cannot publish to RabbitMQ: %r', exc)
             log.warn('Failed to publish message payload %s with context %s',
